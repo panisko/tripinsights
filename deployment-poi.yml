@@ -1,4 +1,4 @@
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-app
@@ -11,9 +11,9 @@ spec:
       app: backend-poi
   template:
     metadata:
-      labels:
+      labels: 
         app: backend-poi
-    spec:
+    spec: 
       containers:
       - name: poi
         image: registryoec4829.azurecr.io/poi:piotr
@@ -30,3 +30,4 @@ spec:
           value: mydrivingDB
         - name: ASPNETCORE_ENVIRONMENT
           value: Development
+     
