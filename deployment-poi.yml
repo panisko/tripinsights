@@ -1,0 +1,32 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-app
+  labels:
+    app: backend-poi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-poi
+  template:
+    metadata:
+      labels:
+        app: backend-poi
+    spec:
+      containers:
+      - name: poi
+        image: registryoec4829.azurecr.io/poi:piotr
+        ports:
+        - containerPort: 80
+        env:
+        - name: SQL_USER
+          value: sqladminoEc4829
+        - name: SQL_PASSWORD
+          value: 'Admin2021'
+        - name: SQL_SERVER
+          value: sqlserveroec4829.database.windows.net
+        - name: SQL_DBNAME
+          value: mydrivingDB
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
