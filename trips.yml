@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: trips
-      image: registryoec4829.azurecr.io/trips:kirill
+      image: registryoec4829.azurecr.io/trips:v1.0
       ports:
       - containerPort: 80
       env:

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tripviewer
+  labels:
+    app: tripviewer
+spec:
+  containers:
+    - name: tripviewer
+      image: registryoec4829.azurecr.io/tripviewer:v1.0
+      ports:
+      - containerPort: 80
+      env:
+      - name: USERPROFILE_API_ENDPOINT
+        value: "http://userprofile-service"
+      - name: TRIPS_API_ENDPOINT
+        value: "http://trips-service"
+
+

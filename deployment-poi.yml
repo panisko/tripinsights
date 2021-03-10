@@ -16,7 +16,7 @@ spec:
     spec: 
       containers:
       - name: poi
-        image: registryoec4829.azurecr.io/poi:piotr
+        image: registryoec4829.azurecr.io/poi:v1.0
         ports:
         - containerPort: 80
         env:
