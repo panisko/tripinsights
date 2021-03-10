@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: trips
+  labels:
+    app: trips
+spec:
+  containers:
+    - name: trips
+      image: registryoec4829.azurecr.io/trips:kirill
+      ports:
+      - containerPort: 80
+      env:
+      - name: SQL_USER
+        value: sqladminoEc4829
+      - name: SQL_PASSWORD
+        value: 'Admin2021'
+      - name: SQL_SERVER
+        value: sqlserveroec4829.database.windows.net
+      - name: SQL_DBNAME
+        value: mydrivingDB
+     
